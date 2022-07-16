@@ -1,0 +1,21 @@
+div.cell {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+.clear-left {
+  clear: left;
+}
+
+.br {
+  border-right: 1px solid orange;
+}
+.bl {
+  border-left: 1px solid orange;
+}
+.bt {
+  border-top: 1px solid orange;
+}
+.bb {
+  border-bottom: 1px solid orange;
+}

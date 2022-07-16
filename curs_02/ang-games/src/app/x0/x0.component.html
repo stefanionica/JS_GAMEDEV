@@ -1,0 +1,12 @@
+<div id="game">
+  <div class="cell" *ngFor="let cell of cells; let i = index"
+    [ngClass]="{
+      'clear-left': i % 3 === 0,
+      'br': i % 3 === 0,
+      'bl': i % 3 === 2,
+      'bt bb': i >= 3 && i <= 5
+    }"
+    (click)="clickedCell(i)">
+  {{cell}}</div>
+  <div class="message" *ngIf="finished">Finished</div>
+</div>
