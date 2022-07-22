@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello canvas!</title>
+        <style>
+            #canvas {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width="300" height="300">
+            An alternative text describing what your canvas displays.
+        </canvas>
+        <script>
+            var myCanvas = document.getElementById("canvas");
+            console.log(myCanvas, typeof myCanvas);
+
+            var ctx = myCanvas.getContext("2d");
+            ctx.moveTo(10, 30);
+            ctx.lineTo(10, 90);
+            ctx.stroke();
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "area01_level_tiles.tsx": {
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/C3_12/Desktop/gabi/JS_GameDev/curs_04/hello-mel/src/data/img/map",
+    "map.height": 15,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 20,
+    "openFiles": [
+    ],
+    "project": "hello-map.tiled-project",
+    "recentFiles": [
+        "area01_level_tiles.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

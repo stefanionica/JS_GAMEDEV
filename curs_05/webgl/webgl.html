@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello WebGL!</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://threejs.org/build/three.min.js"></script>
+</head>
+
+<body>
+    <!-- <canvas id="canvas" width="300" height="300">
+            An alternative text describing what your canvas displays.
+        </canvas> -->
+    <script>
+        // var myCanvas = document.getElementById("canvas");
+        // console.log(myCanvas, typeof myCanvas);
+
+        // var ctx = myCanvas.getContext("webgl");
+
+
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
+        // WebGL renderer - randeaza direct in pagina
+        var renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(WIDTH, HEIGHT);
+        renderer.setClearColor(0xDDDDDD, 1);
+
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT);
+        camera.position.z = 50;
+        camera.position.x = 20;
+        camera.position.y = 10;
+        scene.add(camera);
+
+        var boxGeometry = new THREE.BoxGeometry(10, 10, 10);
+        var basicMaterial = new THREE.MeshBasicMaterial({ color: 0x0095DD });
+        var cube = new THREE.Mesh(boxGeometry, basicMaterial);
+        scene.add(cube);
+        document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.ConeGeometry(5, 20, 32);
+        const material = new THREE.MeshPhongMaterial({ color: 0xffff00 });
+        const cone = new THREE.Mesh(geometry, material);
+        cone.position.x = 40;
+        scene.add(cone);
+
+        // const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+        // light.position.set(20, 10, 50);
+
+        var light = new THREE.PointLight(0xFFFFFF);
+light.position.set(-10, 15, 50)
+        scene.add( light );
+
+        var t =0;
+        function render() {
+            requestAnimationFrame(render);
+            renderer.render(scene, camera);
+            cone.rotation.z += 0.01;
+            t += 0.01;
+            cube.scale.y = Math.abs(Math.sin(t));
+        }
+        render();
+
+    </script>
+
+</body>
+
+</html>
